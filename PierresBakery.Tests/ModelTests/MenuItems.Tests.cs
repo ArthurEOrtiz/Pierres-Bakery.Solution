@@ -1,7 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
+using System.Collections.Generic;
 using PierresBakery;
 
-namespace PoerresBakery.Tests
+namespace PierresBakery.Tests
 {
   [TestClass]
   public class MenuItemsTests
@@ -9,7 +11,8 @@ namespace PoerresBakery.Tests
     [TestMethod]
     public void BreadList_ReturnListOfBread_BreadListItems()
     {
-    //Tests will go in here
+      List<string> testBreadList = new List<string> {"White", "Multigrain", "Ciabatta", "Focaccia", "Rye"};
+      Assert.AreEqual(testBreadList, MenuItems.listOfBreads);
     }
   }
 }
