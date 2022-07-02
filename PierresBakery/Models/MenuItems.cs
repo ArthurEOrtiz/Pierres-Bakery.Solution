@@ -6,12 +6,18 @@ namespace PierresBakery // logic goes here
   {
     private int _quantity;
     private int _price;
-    // in here  goes the method.
-    public Bread(int quantity, int price)
+
+    public Bread(int quantity)
     {
       _quantity = quantity;
-      _price = price;
 
+      for (int index = 0; index <= quantity; index++)
+      {
+        if (!(index % 3 == 0)) {
+          _price += 5;
+        }
+      }
+    
     }
 
     public int GetQuantity()
