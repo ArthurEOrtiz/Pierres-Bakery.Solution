@@ -21,11 +21,17 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
-    public void BreadConstuctor_ReturnsValueofPrice_Thirtyfive()
+    public void BreadConstructor_ReturnsValueofPrice_Thirtyfive()
     {
       Bread thirdBread = new Bread(10);
       Assert.AreEqual(thirdBread.GetPrice(),35);
     }
 
+    [TestMethod]
+    public void PasteryConstructor_CreatesInstanceOfBread_Bread()
+    {
+      Pastry firstPastry = new Pastry(10);
+      Assert.AreEqual(typeof(Pastry), firstPastry.GetType());
+    }
   }
 }
