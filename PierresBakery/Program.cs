@@ -24,7 +24,7 @@ namespace PierresBakery
           int pastryQuantity = Int32.Parse(pastryInputQuantity);
           Pastry newPastry = new Pastry(pastryQuantity);
           Cart newCart = new Cart(newBread.GetPrice(), newPastry.GetPrice());
-          Console.WriteLine("Your total for today is: " + newCart.GetTotal());
+          Console.WriteLine("Your total for today is: $" + newCart.GetTotal());
           
 
         }
@@ -33,16 +33,6 @@ namespace PierresBakery
           Console.WriteLine("!!!!!!!!Please enter a whole number! Or no bread for you!!!!!!!");
           Main();
         }
-
-      
-      // Console.WriteLine("Program is running...");
-      // Bread newBread = new Bread(10);
-      
-      // Pastry newPastry = new Pastry(6);
-      // Console.WriteLine(newPastry.GetPrice());
-      // Cart newCart = new Cart(newBread.GetPrice(), newPastry.GetPrice());
-      // Console.WriteLine(newCart.GetTotal());
-
     }
   }
 }
