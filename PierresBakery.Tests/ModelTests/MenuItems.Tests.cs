@@ -14,10 +14,17 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
-    public void BreadConstructor_ReturnsValueOfPrice_Bread()
+    public void BreadConstructor_ReturnsValueOfPrice_One()
     {
-    Bread secondBread = new Bread(1,1);
-    Assert.AreEqual(secondBread.GetPrice(), 1);
+      Bread secondBread = new Bread(1,1);
+      Assert.AreEqual(secondBread.GetPrice(), 1);
+    } 
+
+    [TestMethod]
+    public void BreadConstructor_ReturnsValueOfQuantity_One()
+    {
+      Bread thirdBread = new Bread(1,1);
+      Assert.AreEqual(thirdBread.GetPrice(),1);
     }
 
   }
