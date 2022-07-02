@@ -20,5 +20,12 @@ namespace PierresBakery.Tests
       Assert.AreEqual(secondBread.GetQuantity(),1);
     }
 
+    [TestMethod]
+    public void BreadConstuctor_ReturnsValueofPrice_Thirtyfive()
+    {
+      Bread thirdBread = new Bread(10);
+      Assert.AreEqual(thirdBread.GetPrice(),35);
+    }
+
   }
 }

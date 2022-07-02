@@ -17,7 +17,6 @@ namespace PierresBakery // logic goes here
           _price += 5;
         }
       }
-    
     }
 
     public int GetQuantity()
@@ -29,6 +28,5 @@ namespace PierresBakery // logic goes here
     {
       return _price;
     }
-  
   }
 }
