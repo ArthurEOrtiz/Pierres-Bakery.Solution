@@ -39,5 +39,14 @@ namespace PierresBakery.Tests
       Pastry secondPastry = new Pastry(6);
       Assert.AreEqual(secondPastry.GetPrice(), 10);
     }
+
+    [TestMethod]
+    public void CartConstructor_ReturnTotalCost_fourtyfive()
+    {
+      Bread fourthBread = new Bread(10);
+      Pastry thirdPastry = new Pastry(6);
+      Cart firstCart = new Cart(fourthBread.GetPrice(), thirdPastry.GetPrice());
+      Assert.AreEqual(firstCart.GetTotal(), 45);
+    }
   }
 }

@@ -59,4 +59,19 @@ namespace PierresBakery
       return _price;
     }
   }
+
+  public class Cart 
+  {
+    private int _total;
+
+    public Cart(int breadCost, int pastryCost)
+    {
+      _total = breadCost + pastryCost;
+    }
+
+    public int GetTotal() 
+    {
+      return _total;
+    }
+  }
 }
