@@ -12,6 +12,8 @@ namespace PierresBakery
       Console.WriteLine(newBread.GetPrice()); 
       Pastry newPastry = new Pastry(6);
       Console.WriteLine(newPastry.GetPrice());
+      Cart newCart = new Cart(newBread.GetPrice(), newPastry.GetPrice());
+      Console.WriteLine(newCart.GetTotal());
 
     }
   }
