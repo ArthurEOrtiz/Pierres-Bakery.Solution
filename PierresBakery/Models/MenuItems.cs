@@ -1,8 +1,8 @@
 using System;
 
-namespace PierresBakery // logic goes here
+namespace PierresBakery
 {
-  public class Bread// is the class 
+  public class Bread
   {
     private int _quantity;
     private int _price;
@@ -11,7 +11,7 @@ namespace PierresBakery // logic goes here
     {
       _quantity = quantity;
 
-      for (int index = 0; index <= quantity; index++)
+      for (int index = 1; index <= quantity; index++)
       {
         if (!(index % 3 == 0)) {
           _price += 5;
@@ -37,27 +37,26 @@ namespace PierresBakery // logic goes here
     public Pastry(int quantity)
     {
       _quantity = quantity;
-      for (int index = 0; index <= quantity; index++)
+
+      for (int index = 1; index <= quantity; index++)
       {
         if (!(index % 3 == 0)) {
           _price += 2;
         }
         else
         {
-          _price +=1;
+          _price ++;
         }
       }
+    }
+    public int GetQuantity()
+    {
+      return _quantity;
+    }
 
-      // public int GetQuantity()
-      // {
-      // return _quantity;
-      // }
-
-      // public int GetPrice()
-      // {
-      // return _price;
-      // }
-
+    public int GetPrice()
+    {
+      return _price;
     }
   }
 }
