@@ -1,5 +1,3 @@
-PierresBakery/obj/
-PierresBakery.Tests/obj/
-
-PierresBakery/bin/
-PierresBakery.Tests/bin/
+*/bin/
+*/obj/
+.vscode
