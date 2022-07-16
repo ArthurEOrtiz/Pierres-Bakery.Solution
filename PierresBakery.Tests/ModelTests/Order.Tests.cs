@@ -55,6 +55,20 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "Initial bulk purchas.";
+      Order newOrder = new Order("title", description);
+
+      string updatedDescription = "Expedited purchse, deliver to bob.";
+      newOrder.Description = updatedDescription;
+
+      string result = newOrder.Description;
+
+      Assert.AreEqual(updatedDescription, result);
+    }
     
   }
 }
