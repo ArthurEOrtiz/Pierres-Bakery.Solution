@@ -23,6 +23,19 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
+    public void SetName_SetName_String()
+    {
+      string name = "Bread'n'Stuff";
+      Vendor newVendor = new Vendor(name, "test");
+
+      string updatedName = "Stuf'n'Bread";
+      newVendor.Name = updatedName;
+      string result = newVendor.Name;
+
+      Assert.AreEqual(updatedName, result);
+    }
+
+    [TestMethod]
     public void GetDescription_ReturnDes_String()
     {
       string description = "Coffee and brunch place";
