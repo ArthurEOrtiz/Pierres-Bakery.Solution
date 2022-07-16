@@ -114,6 +114,21 @@ namespace PierresBakery.Tests
       Assert.AreEqual(date, result);
     }
 
+    [TestMethod]
+    public void SetDate_SetDate_DateTime()
+    {
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("Title", "description", 12.34, date);
+
+      DateTime newDate = new DateTime(2020, 7, 16, 14, 46, 0);
+      newOrder.Date = newDate;
+
+      DateTime result = newOrder.Date;
+
+      Assert.AreEqual(newDate, result);
+
+    }
+
 
   }
 }
