@@ -16,7 +16,7 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title");
+      Order newOrder = new Order("title", "description");
 
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
@@ -25,7 +25,7 @@ namespace PierresBakery.Tests
     public void GetTitle_ReturnTitle_String()
     {
       string title = "Initial Purchase";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "description");
 
       string result = newOrder.Title;
 
@@ -36,7 +36,7 @@ namespace PierresBakery.Tests
     public void SetTitle_SetTitle_String()
     {
       string title = "Initial Purchase";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "description");
 
       string updatedTitle = "Seconday Purchase";
       newOrder.Title = updatedTitle;
@@ -44,5 +44,17 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(updatedTitle, result);
     }
+
+    [TestMethod]
+    public void GetDescription_ReturnDescription_String()
+    {
+      string description = "Initial bulk purchase.";
+      Order newOrder = new Order("title", description);
+
+      string result = newOrder.Description;
+
+      Assert.AreEqual(description, result);
+    }
+    
   }
 }
