@@ -136,7 +136,23 @@ namespace PierresBakery.Tests
       CollectionAssert.AreEqual(newOrderList, result);
     }
 
-    
+    [TestMethod]
+    public void GetAll_ReturnsOrderList_OrderList()
+    {
+      string title01 = "Inital Purchase";
+      string title02 = "Seconday Purchase";
+      string description01 = "New Vendor, normal shipping methods";
+      string description02 = "Updated bread count to recurring order";
+      DateTime date01 = new DateTime(2022, 7, 16, 18, 0, 0);
+      DateTime date02 = new DateTime(2022, 7, 24, 18, 0, 0);
+      Order order01 = new Order(title01, description01, 12.34, date01);
+      Order order02 = new Order(title02, description02, 56.78, date01);
+      List<Order> newList = new List<Order> { order01, order02 };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
 
     [TestMethod]
     public void Find_ReturnCorrectOrder_Item()
