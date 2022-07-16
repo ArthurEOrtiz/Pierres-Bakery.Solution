@@ -85,5 +85,17 @@ namespace PierresBakery.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_VendorInstantiateWithAnIDAndGetterReturn_Int()
+    {
+      string vendor = "Whole Foods";
+      string description = "'health' food store.";
+      Vendor newVendor = new Vendor(vendor, description);
+
+      int result = newVendor.Id;
+
+      Assert.AreEqual(1,result);
+    }
   }
 }
