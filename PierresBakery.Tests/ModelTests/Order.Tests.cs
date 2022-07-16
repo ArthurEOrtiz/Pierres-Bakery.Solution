@@ -127,6 +127,17 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(newDate, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newOrderList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newOrderList, result);
+    }
+
+    
+
     [TestMethod]
     public void Find_ReturnCorrectOrder_Item()
     {
