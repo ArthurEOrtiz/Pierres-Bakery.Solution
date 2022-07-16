@@ -8,15 +8,16 @@ namespace PierresBakery.Tests
   [TestClass]
   public class OrderTests // : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Order.ClearAll();
-    // }
+  //   // public void Dispose()
+  //   // {
+  //   //   Order.ClearAll();
+  //   // }
 
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description", 12.34);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("title", "description", 12.34, date);
 
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
@@ -25,7 +26,8 @@ namespace PierresBakery.Tests
     public void GetTitle_ReturnTitle_String()
     {
       string title = "Initial Purchase";
-      Order newOrder = new Order(title, "description", 12.34);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order(title, "description", 12.34, date);
 
       string result = newOrder.Title;
 
@@ -36,7 +38,8 @@ namespace PierresBakery.Tests
     public void SetTitle_SetTitle_String()
     {
       string title = "Initial Purchase";
-      Order newOrder = new Order(title, "description", 12.34);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order(title, "description", 12.34, date);
 
       string updatedTitle = "Seconday Purchase";
       newOrder.Title = updatedTitle;
@@ -49,7 +52,8 @@ namespace PierresBakery.Tests
     public void GetDescription_ReturnDescription_String()
     {
       string description = "Initial bulk purchase.";
-      Order newOrder = new Order("title", description, 12.34);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("title", description, 12.34, date);
 
       string result = newOrder.Description;
 
@@ -60,7 +64,8 @@ namespace PierresBakery.Tests
     public void SetDescription_SetDescription_String()
     {
       string description = "Initial bulk purchas.";
-      Order newOrder = new Order("title", description, 12.34);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("title", description, 12.34, date);
 
       string updatedDescription = "Expedited purchse, deliver to bob.";
       newOrder.Description = updatedDescription;
@@ -74,7 +79,8 @@ namespace PierresBakery.Tests
     public void GetPrice_ReturnPrice_Double()
     {
       double price = 12.34;
-      Order newOrder = new Order("title", "description", price);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("title", "description", price, date);
 
       double result = newOrder.Price;
 
@@ -86,7 +92,8 @@ namespace PierresBakery.Tests
     public void SetPrice_SetPrice_Double()
     {
       double price = 12.34;
-      Order newOrder = new Order("titel", "description", price);
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("titel", "description", price, date);
 
       double updatedPrice = 56.78;
       newOrder.Price = updatedPrice;
@@ -95,5 +102,18 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(updatedPrice, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnDate_DateTime()
+    {
+      DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
+      Order newOrder = new Order("Title", "description", 12.34, date);
+
+      DateTime result = newOrder.Date;
+
+      Assert.AreEqual(date, result);
+    }
+
+
   }
 }
