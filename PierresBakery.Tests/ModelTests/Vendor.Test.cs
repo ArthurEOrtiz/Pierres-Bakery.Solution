@@ -1,11 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using PierresBakery;
+using System;
 
 namespace PierresBakery.Tests 
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -55,6 +62,14 @@ namespace PierresBakery.Tests
       string result = newVendor.Description;
 
       Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_VendorList()
+    {
+      List<Vendor> newVendorList = new List<Vendor> { };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newVendorList, result);
     }
   }
 }
