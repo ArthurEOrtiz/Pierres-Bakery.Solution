@@ -31,5 +31,18 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      string title = "Initial Purchase";
+      Order newOrder = new Order(title);
+
+      string updatedTitle = "Seconday Purchase";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      Assert.AreEqual(updatedTitle, result);
+    }
   }
 }
