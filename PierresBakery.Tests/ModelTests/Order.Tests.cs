@@ -71,7 +71,7 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
-    public void GetPrice_ReturnPrice_Price()
+    public void GetPrice_ReturnPrice_Double()
     {
       double price = 12.34;
       Order newOrder = new Order("title", "description", price);
@@ -81,6 +81,19 @@ namespace PierresBakery.Tests
       Assert.AreEqual(price, result);
 
     }
-    
+
+    [TestMethod]
+    public void SetPrice_SetPrice_Double()
+    {
+      double price = 12.34;
+      Order newOrder = new Order("titel", "description", price);
+
+      double updatedPrice = 56.78;
+      newOrder.Price = updatedPrice;
+
+      double result = newOrder.Price;
+
+      Assert.AreEqual(updatedPrice, result);
+    }
   }
 }
