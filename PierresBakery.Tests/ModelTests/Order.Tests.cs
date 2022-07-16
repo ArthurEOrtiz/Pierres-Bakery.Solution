@@ -16,9 +16,20 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("title");
 
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void GetTitle_ReturnTitle_String()
+    {
+      string title = "Initial Purchase";
+      Order newOrder = new Order(title);
+
+      string result = newOrder.Title;
+
+      Assert.AreEqual(title, result);
     }
   }
 }
