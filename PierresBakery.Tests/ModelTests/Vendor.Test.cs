@@ -97,5 +97,22 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(1,result);
     }
+
+    [TestMethod]
+    public void Find_ReturnCorrectVendor_Item()
+    {
+      string vendor01 = "Winco";
+      string vendor02 = "Bob's Burgers";
+      string description01 = "Employeed own";
+      string description02 = "Burger place";
+
+      Vendor newVendor1 = new Vendor(vendor01, description01);
+      Vendor newVendor2 = new Vendor(vendor02, description02);
+
+      Vendor result = Vendor.Find(2);
+
+      Assert.AreEqual(newVendor2, result);
+    }
+
   }
 }
