@@ -113,5 +113,24 @@ namespace PierresBakery.Tests
 
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string title = "Inital Purchase";
+      string orderDescription = "New Vendor, normal shipping methods";
+      DateTime date = new DateTime(2022, 7, 16, 18, 0, 0);
+      Order order = new Order(title, orderDescription, 12.34, date);
+      List<Order> newList = new List<Order> { order };
+      
+      string vendor = "Whole Foods";
+      string vendorDescription = "'health' food store.";
+      Vendor newVendor = new Vendor(vendor, vendorDescription);
+      newVendor.AddOrder(order);
+
+      List<Order> result = newVendor.Orders;
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
