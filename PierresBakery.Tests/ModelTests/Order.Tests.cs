@@ -6,12 +6,12 @@ using System;
 namespace PierresBakery.Tests
 {
   [TestClass]
-  public class OrderTests // : IDisposable
+  public class OrderTests : IDisposable
   {
-  //   // public void Dispose()
-  //   // {
-  //   //   Order.ClearAll();
-  //   // }
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void OrderConstructor_CreateInstanceOfOrder_Order()
@@ -126,9 +126,23 @@ namespace PierresBakery.Tests
       DateTime result = newOrder.Date;
 
       Assert.AreEqual(newDate, result);
-
     }
+    [TestMethod]
+    public void Find_ReturnCorrectOrder_Item()
+    {
+      string title01 = "Inital Purchase";
+      string title02 = "Seconday Purchase";
+      string description01 = "New Vendor, normal shipping methods";
+      string description02 = "Updated bread count to recurring order";
+      DateTime date01 = new DateTime(2022, 7, 16, 18, 0, 0);
+      DateTime date02 = new DateTime(2022, 7, 24, 18, 0, 0);
 
+      Order order01 = new Order(title01, description01, 12.34, date01);
+      Order order02 = new Order(title02, description02, 56.78, date01);
 
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(order02, result);
+    }
   }
 }
