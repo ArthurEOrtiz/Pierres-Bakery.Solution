@@ -155,6 +155,19 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
+    public void GetId_OrderInstatiateWithAnIdAndGetterReturn_Int()
+    {
+      string title = "Inital Purchase";
+      string description = "New Vendor, normal shipping methods";
+      DateTime date = new DateTime(2022, 7, 16, 18, 0, 0);
+      Order order = new Order(title, description, 12.34, date);
+
+      int result = order.Id;
+
+      Assert.AreEqual(1,result);
+    }
+
+    [TestMethod]
     public void Find_ReturnCorrectOrder_Item()
     {
       string title01 = "Inital Purchase";
