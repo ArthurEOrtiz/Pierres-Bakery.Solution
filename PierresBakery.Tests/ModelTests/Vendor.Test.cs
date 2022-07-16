@@ -43,5 +43,18 @@ namespace PierresBakery.Tests
       string result = newVendor.Description;
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "Little shop in the sticks";
+      Vendor newVendor = new Vendor("test", description);
+
+      string updatedDescription = "Little shop downtown";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }
