@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using PierresBakery;
+using PierresBakery.Models;
 using System;
 
 namespace PierresBakery.Tests 
