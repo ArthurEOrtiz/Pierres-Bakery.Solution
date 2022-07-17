@@ -6,18 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Vendors</h1>
-    @using PierresBakery.Models;
-    @if(Model.Count == 0)
-    {
-      <p>You have no vendors added</p>
-    }
-    <ul>
-      @foreach (Vendor vendor in Model)
-      {
-        <li><a href='/vendor/@vendor.Id'> @vendor.Name</a></li>
-      }
-    </ul>
-    <a href="/vendors/new">Add New Vendor</a>
+    <h1>Vendor Details: </h1>
+
+    <h2>@Model.Description</h2>
+
+    <a href='/vendors/new'>Add another Vendor</a>
+    <a href='/vendors'>View all Vendor</a>
   </body>
 </html>
