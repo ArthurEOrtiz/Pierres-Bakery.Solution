@@ -9,15 +9,17 @@
     @using PierresBakery.Models;
 
     <h1>Orders</h1>
-    <h2>@Model.Title</h2>
-    <p>@Model.Description</p>
-    <p>@Model.Price</p>
-    <p>@Model.Date</p>
+    <h2>@Model["order"].Title</h2>
+    <p>Description: @Model["order"].Description</p>
+    <p>Price: $@Model["order"].Price</p>
+    <p>@Model["order"].Date</p>
     <p> Order ID</p>
-    <p>@Model.Id</p>
+    <p>@Model["order"].Id</p>
+
 
     <p><a href='/'>Back Home</a></p>
-    <p><a href='/order/new'>Add Order</a></p>
-    <p><a href='/order'>View All Orders</a></p>
+
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a></p>
+
   </body>
 </html>
