@@ -6,10 +6,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Vendor Details: </h1>
+    @using PierresBakery.Models;
+    <h1>@Model["vendor"].Name</h1>
 
-    <h2>@Model.Description</h2>
+    <h2>@Model["vendor"].Description</h2>
 
+    <h3>Vendor Orders</h3>
+    <ol>
+      @foreach (Order order in @Model["order"])
+      {
+        <li><a href='/vendor/@Model["category"].Id/orders/@order.Id'>@order.Description</a></li>
+      }
+    </ol>
+
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
     <a href='/vendors/new'>Add another Vendor</a>
     <a href='/vendors'>View all Vendor</a>
   </body>
