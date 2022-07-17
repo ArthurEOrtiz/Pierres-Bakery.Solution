@@ -21,8 +21,6 @@ namespace PierresBakery.Controllers
       return View(vendor);
     }
 
-
-
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
@@ -32,8 +30,6 @@ namespace PierresBakery.Controllers
       model.Add("order", order);
       model.Add("vendor", vendor);
       return View(model);
-      // Order foundOrder = Order.Find(id);
-      // return View(foundOrder);
     }
   }
 }

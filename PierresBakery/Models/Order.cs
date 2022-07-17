@@ -20,7 +20,6 @@ namespace PierresBakery.Models
       Date = date;
       _instances.Add(this);
       Id = _instances.Count;
-
     }
 
     public static List<Order> GetAll()
@@ -37,5 +36,7 @@ namespace PierresBakery.Models
     {
       return _instances[searchId-1];
     }
+
+    
   }
 }

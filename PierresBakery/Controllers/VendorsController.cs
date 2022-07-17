@@ -28,7 +28,7 @@ namespace PierresBakery.Controllers
       return RedirectToAction("Index", myVendor);
     }
 
-    [HttpGet("/vendor/{id}")]
+    [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
@@ -50,8 +50,6 @@ namespace PierresBakery.Controllers
       model.Add("order", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
-      // Order newOrder = new Order(orderTitle, description, price, date);
-      // return RedirectToAction("Index");
     }
   }
 }
