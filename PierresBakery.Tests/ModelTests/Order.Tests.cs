@@ -17,7 +17,7 @@ namespace PierresBakery.Tests
     public void OrderConstructor_CreateInstanceOfOrder_Order()
     {
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order("title", "description", 12.34, date);
+      Order newOrder = new Order("title", "description", "12.34", date);
 
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
@@ -27,7 +27,7 @@ namespace PierresBakery.Tests
     {
       string title = "Initial Purchase";
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order(title, "description", 12.34, date);
+      Order newOrder = new Order(title, "description", "12.34", date);
 
       string result = newOrder.Title;
 
@@ -39,7 +39,7 @@ namespace PierresBakery.Tests
     {
       string title = "Initial Purchase";
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order(title, "description", 12.34, date);
+      Order newOrder = new Order(title, "description", "12.34", date);
 
       string updatedTitle = "Seconday Purchase";
       newOrder.Title = updatedTitle;
@@ -53,7 +53,7 @@ namespace PierresBakery.Tests
     {
       string description = "Initial bulk purchase.";
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order("title", description, 12.34, date);
+      Order newOrder = new Order("title", description, "12.34", date);
 
       string result = newOrder.Description;
 
@@ -65,7 +65,7 @@ namespace PierresBakery.Tests
     {
       string description = "Initial bulk purchas.";
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order("title", description, 12.34, date);
+      Order newOrder = new Order("title", description, "12.34", date);
 
       string updatedDescription = "Expedited purchse, deliver to bob.";
       newOrder.Description = updatedDescription;
@@ -78,11 +78,11 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void GetPrice_ReturnPrice_Double()
     {
-      double price = 12.34;
+      string price = "12.34";
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
       Order newOrder = new Order("title", "description", price, date);
 
-      double result = newOrder.Price;
+      string result = newOrder.Price;
 
       Assert.AreEqual(price, result);
 
@@ -91,14 +91,14 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void SetPrice_SetPrice_Double()
     {
-      double price = 12.34;
+      string price = "12.34";
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
       Order newOrder = new Order("titel", "description", price, date);
 
-      double updatedPrice = 56.78;
+      string updatedPrice = "56.78";
       newOrder.Price = updatedPrice;
 
-      double result = newOrder.Price;
+      string result = newOrder.Price;
 
       Assert.AreEqual(updatedPrice, result);
     }
@@ -107,7 +107,7 @@ namespace PierresBakery.Tests
     public void GetDate_ReturnDate_DateTime()
     {
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order("Title", "description", 12.34, date);
+      Order newOrder = new Order("Title", "description", "12.34", date);
 
       DateTime result = newOrder.Date;
 
@@ -118,7 +118,7 @@ namespace PierresBakery.Tests
     public void SetDate_SetDate_DateTime()
     {
       DateTime date = new DateTime(2020, 7, 16, 14, 32, 0);
-      Order newOrder = new Order("Title", "description", 12.34, date);
+      Order newOrder = new Order("Title", "description", "12.34", date);
 
       DateTime newDate = new DateTime(2020, 7, 16, 14, 46, 0);
       newOrder.Date = newDate;
@@ -145,8 +145,8 @@ namespace PierresBakery.Tests
       string description02 = "Updated bread count to recurring order";
       DateTime date01 = new DateTime(2022, 7, 16, 18, 0, 0);
       DateTime date02 = new DateTime(2022, 7, 24, 18, 0, 0);
-      Order order01 = new Order(title01, description01, 12.34, date01);
-      Order order02 = new Order(title02, description02, 56.78, date01);
+      Order order01 = new Order(title01, description01, "12.34", date01);
+      Order order02 = new Order(title02, description02, "56.78", date01);
       List<Order> newList = new List<Order> { order01, order02 };
 
       List<Order> result = Order.GetAll();
@@ -160,7 +160,7 @@ namespace PierresBakery.Tests
       string title = "Inital Purchase";
       string description = "New Vendor, normal shipping methods";
       DateTime date = new DateTime(2022, 7, 16, 18, 0, 0);
-      Order order = new Order(title, description, 12.34, date);
+      Order order = new Order(title, description, "12.34", date);
 
       int result = order.Id;
 
@@ -177,8 +177,8 @@ namespace PierresBakery.Tests
       DateTime date01 = new DateTime(2022, 7, 16, 18, 0, 0);
       DateTime date02 = new DateTime(2022, 7, 24, 18, 0, 0);
 
-      Order order01 = new Order(title01, description01, 12.34, date01);
-      Order order02 = new Order(title02, description02, 56.78, date01);
+      Order order01 = new Order(title01, description01, "12.34", date01);
+      Order order02 = new Order(title02, description02, "56.78", date01);
 
       Order result = Order.Find(2);
 
