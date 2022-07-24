@@ -42,7 +42,6 @@ Use Razor to display information on each page.
 * C sharp
 * Dotnet 
 * MSTest
-* DotNet
 * Razor
 
 ## Setup//Install
